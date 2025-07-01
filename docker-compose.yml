@@ -1,0 +1,15 @@
+version: '3'
+services:
+  sportsbook-ingestion:
+    build: ./services/sportsbook-ingestion
+    ports:
+      - "5001:5000"
+    volumes:
+      - ./services/sportsbook-ingestion:/app
+
+  projection-engine:
+    build: ./services/projection-engine
+    ports:
+      - "5002:5000"
+    volumes:
+      - ./services/projection-engine:/app
